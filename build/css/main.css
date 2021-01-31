@@ -1859,8 +1859,6 @@ li {
     margin-bottom: 20px; }
     .lk-source__item:nth-child(3) {
       margin-right: 10px; }
-  .lk-content__filter-btn, .lk-content__filter-btn-reset {
-    margin-bottom: 20px; }
   .lk-content__filter {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
