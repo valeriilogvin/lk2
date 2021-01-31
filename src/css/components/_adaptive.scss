@@ -52,13 +52,9 @@
         margin-right: 10px;
       }
     }
-    .lk-content__filter-btn, .lk-content__filter-btn-reset {
-        margin-bottom: 20px;
-    }
-    .lk-banner__list {
-        flex-wrap: wrap;
-        justify-content: start;
-      }
+    // .lk-content__filter-btn, .lk-content__filter-btn-reset {
+    //     margin-bottom: 20px;
+    // }
     .lk-content__filter{
       flex-direction: column;
       align-items: flex-start;
@@ -72,7 +68,7 @@
       }
       .lk-banner__btns {
         width: 100%;
-        margin-top: 20px;
+        margin: 20px 0 0;
       }
   }
   
@@ -135,7 +131,7 @@
     }
     .lk-source__input {
       width: 100%;
-      margin-top: 20px;
+      margin-top: 0px;
     }
     //   .burger {
   
@@ -176,22 +172,17 @@
     .lk-static__inner.prom, .lk-static__inner.promkod {
         max-width: 100%;
     }
-    .lk-banner__filter, .lk-banner__btns {
-        display: flex;
-        justify-content: center;
+    .lk-banner__item-ban {
+      max-width: 350px;
+      margin-right: 10px;
     }
-    .lk-banner__list {
-        justify-content: center;
-    }
+    
+   
   }
   
   @media (max-width: 1196px) {
-    .lk-banner__list {
-      display: block;
-    }
-    .lk-banner__item-ban {
-      margin: 20px auto 0;
-    }
+   
+    
     .lk-banner__item {
       margin-top: 20px;
     }
@@ -284,11 +275,14 @@
         border-bottom: 1px solid #000;
       }
     }
-    body.lock {
-      overflow: hidden;
-    }
+    
     .lk-content__chart{
       max-width: 100%;
+    }
+
+    // ------
+    .lk-banner__item-ban {
+      max-width: 330px;
     }
   }
   
@@ -297,12 +291,10 @@
       display: block;
     }
     .notifications__btn {
-      margin: 0 auto;
+      margin: 0;
     }
     .notifications__button {
-      display: flex;
-      margin: 20px auto 0;
-      justify-content: center;
+      margin: 20px 0 0;
     }
     .lk-content__form {
       width: 100%;
@@ -440,6 +432,9 @@
     .lk-content__chart .right {
       height: 470px;
     }
+    .lk-banner__item-ban {
+      max-width: 300px;
+    }
   }
   
   
@@ -490,6 +485,18 @@
       height: auto;
       padding: 0;
     }
+    // -------
+    .tabs__caption .lk-content__text {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    .lk-banner__item-ban {
+      max-width: 330px;
+    }
+    .lk-banner__list {
+      justify-content: center;
+    }
+  
   }
   
   @media (max-width: 520px) {

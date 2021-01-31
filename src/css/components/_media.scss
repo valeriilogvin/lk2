@@ -46,10 +46,20 @@
 
 @media (max-width: 1600px) {
 
-  .lk-banner__list {
-    flex-wrap: wrap;
-    justify-content: start;
-  }
+// <<<<<<< HEAD
+//     .right {
+//       padding-left: 0;
+//       border: none;
+//       width: 100%;
+//     }
+  
+ 
+// =======
+//   .lk-banner__list {
+//     flex-wrap: wrap;
+//     justify-content: start;
+//   }
+// >>>>>>> 157827140f542fbb9b166bca9e79525125276bc8
   .lk-source__inner {
     padding-left: 0;
 
@@ -174,12 +184,7 @@
 }
 
 @media (max-width: 1196px) {
-  .lk-banner__list {
-    display: block;
-  }
-  .lk-banner__item-ban {
-    margin: 20px auto 0;
-  }
+  
   .lk-banner__item {
     margin-top: 20px;
   }
@@ -271,9 +276,7 @@
       border-bottom: 1px solid #000;
     }
   }
-  body.lock {
-    overflow: hidden;
-  }
+ 
 }
 
 @media (max-width: 890px) {
