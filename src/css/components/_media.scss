@@ -560,6 +560,10 @@
   .lk-content__top-pag {
     padding: 23px 40px 20px;
   }
+
+  .lk-content__form .checkboxes{
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 390px) {

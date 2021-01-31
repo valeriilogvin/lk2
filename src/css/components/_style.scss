@@ -425,6 +425,19 @@ li {
         transition: all .3s;
         padding: 32px 40px 27px;
         border-bottom: 2px solid transparent;
+
+        a{
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 21px;
+            text-align: center;
+            color: #182045;
+            transition: all .2s ease;
+
+            &:hover{
+                color: #616781;
+            }
+        }
     }
 
     &__text.active {
@@ -468,6 +481,10 @@ li {
     &__form {
         display: flex;
         align-items: center;
+
+        .checkboxes{
+            display: flex;
+        }
     }
 
     &__filter-title {

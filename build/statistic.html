@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title></title>
     <link rel="stylesheet" href="css/libs.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -195,25 +196,35 @@
             <div class="lk-content__wrapper">
                 <div class="lk-content__filter">
                     <div class="lk-content__filter-title">
-                        Фильтр по дате:
+                        <input class="datepicker" type="text">
+                        <span>Фильтр по дате: </span>
+                        <div>
+                            <span class="date-start"></span>
+                            <span class="date-end"></span>
+                        </div>
                     </div>
                     <form class="lk-content__form" action="">
-                        <label class="lk-content__filter-label">
-                            <input class="lk-content__filter-input" name="radio-data" type="radio">
-                            <span></span>
-                            <div class="lk-content__filter-input-text">За день</div>
-                        </label>
-                        <label class="lk-content__filter-label">
-                            <input class="lk-content__filter-input" name="radio-data" type="radio">
-                            <span></span>
-                            <div class="lk-content__filter-input-text">За 3 дня</div>
-                        </label>
-                        <label class="lk-content__filter-label">
-                            <input class="lk-content__filter-input" name="radio-data" type="radio">
-                            <span></span>
-                            <div class="lk-content__filter-input-text">За Неделю</div>
-                        </label>
-
+                        <div class="checkboxes">
+                            <label class="lk-content__filter-label">
+                                <input class="lk-content__filter-input" name="radio-data" type="radio">
+                                <span></span>
+                                <div class="lk-content__filter-input-text">За 1 день</div>
+                            </label>
+                            <label class="lk-content__filter-label">
+                                <input class="lk-content__filter-input" name="radio-data" type="radio">
+                                <span></span>
+                                <div class="lk-content__filter-input-text">За 3 дня</div>
+                            </label>
+                            <label class="lk-content__filter-label">
+                                <input class="lk-content__filter-input" name="radio-data" type="radio">
+                                <span></span>
+                                <div class="lk-content__filter-input-text">За Неделю</div>
+                            </label>
+                        </div>
+                        <div class="buttons">
+                            <button type="submit" class="lk-btn lk-content__filter-btn">Применить</button>
+                            <button type="reset" class="lk-reset lk-content__filter-btn-reset">Сбросить</button>
+                        </div>
                     </form>
                 </div>
 
@@ -576,9 +587,52 @@
     </div>
 </div>
 
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/libs.min.js"></script>
-<script src="js/main.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/jquery.datepicker.extension.range.min.js"></script>
+
+    <script src="js/libs.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        $(function () {
+            if (window.matchMedia('(max-width: 660px)').matches) {
+                $('.datepicker').datepicker({
+                    showOn: "button",
+                    range: 'period', // режим - выбор периода
+                    numberOfMonths: 1,
+                    buttonImageOnly: true,
+                    buttonImage: "img/icons/calendar-icon.svg",
+                    onSelect: function (dateText, inst, extensionRange) {
+                        // extensionRange - объект расширения
+                        $('.date-start').html(' ' + extensionRange.startDateText);
+                        $('.date-end').html(' - ' + extensionRange.endDateText);
+                        console.log(extensionRange); // массив дат (объект даты)
+                        console.log(extensionRange.startDateText)
+                    }
+                });
+            } else {
+                $('.datepicker').datepicker({
+                    showOn: "button",
+                    range: 'period', // режим - выбор периода
+                    numberOfMonths: 2,
+                    buttonImageOnly: true,
+                    buttonImage: "img/icons/calendar-icon.svg",
+                    onSelect: function (dateText, inst, extensionRange) {
+                        // extensionRange - объект расширения
+                        $('.date-start').html(' ' + extensionRange.startDateText);
+                        $('.date-end').html(' - ' + extensionRange.endDateText);
+                        console.log(extensionRange); // массив дат (объект даты)
+                        console.log(extensionRange.startDateText)
+                    }
+                });
+            }
+
+
+
+
+        });
+    </script>
 
 </body>
 

@@ -4,8 +4,7 @@
   background: #FFFFFF;
   box-shadow: 0px 1px 12px #D5D8D9;
   border-radius: 5px;
-  padding: 30px 40px 45px;
-  margin: 0 -15px;
+  padding: 30px 25px 30px;
 }
 
 .ui-widget-header {
@@ -15,6 +14,50 @@
   font-size: 16px;
   line-height: 19px;
   color: #122025;
+}
+
+.ui-datepicker .ui-datepicker-prev,
+.ui-datepicker .ui-datepicker-next{
+  width: 35px;
+  height: 35px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0px 1px 12px #D5D8D9;
+  transition: all .2s ease;
+}
+
+.ui-datepicker .ui-datepicker-next{
+  span{
+    background-image: url("data:image/svg+xml,%3Csvg width='9' height='14' viewBox='0 0 9 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.71436 2.14307L6.72075 7.18371L1.71436 12.2244' stroke='%23616781' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+  }
+}
+.ui-datepicker .ui-datepicker-prev{
+    span{
+      background-image: url("data:image/svg+xml,%3Csvg width='9' height='14' viewBox='0 0 9 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.28564 2.14307L2.27925 7.18371L7.28564 12.2244' stroke='%23616781' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+    }
+}
+
+.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span{
+  width: 5px;
+  height: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: contain;
+  background-size: contain;
+}
+
+.ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker .ui-datepicker-next:hover{
+  transform: scale(1.1) translateY(-50%);
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus, .ui-button:hover, .ui-button:focus{
+  border: none;
 }
 
 .ui-datepicker-multi .ui-datepicker-group {
@@ -55,6 +98,7 @@
 }
 
 .ui-datepicker {
+  z-index: 999 !important;
   .selected-end {
     &.selected-start {
       a {
