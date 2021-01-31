@@ -224,9 +224,11 @@
                         <div class="lk-content__filter">
                             <div class="lk-content__filter-title">
                                 <input class="datepicker" type="text">
-                                Фильтр по дате:
-                                <span class="date-start"></span> -
-                                <span class="date-end"></span>
+                                <span>Фильтр по дате: </span>
+                                <div>
+                                    <span class="date-start"></span>
+                                    <span class="date-end"></span>
+                                </div>
                             </div>
                             <form class="lk-content__form" action="">
                                 <label class="lk-content__filter-label">
@@ -356,9 +358,10 @@
 
             onSelect: function (dateText, inst, extensionRange) {
                 // extensionRange - объект расширения
-                $('.date-start').html(extensionRange.startDateText);
-                $('.date-end').html(extensionRange.endDateText);
-                console.log(extensionRange);
+                $('.date-start').html(' ' + extensionRange.startDateText);
+                $('.date-end').html(' - ' + extensionRange.endDateText);
+                console.log(extensionRange); // массив дат (объект даты)
+                console.log(extensionRange.startDateText)
             }
         });
 
