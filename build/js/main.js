@@ -4,19 +4,19 @@ $(function () {
     $('.burger').click(function () {
         $('.burger, .sidebar').toggleClass('open');
         $('.darkbg').toggleClass('dark');
-        $('body').toggleClass('lock');
+        // $('body').toggleClass('lock');
     });
     $('.darkbg').click(function () {
         $('.burger, .sidebar').removeClass('open');
         $('.darkbg').removeClass('dark');
-        $('body').removeClass('lock');
+        // $('body').removeClass('lock');
     });
     $(window).resize(function () {
         var windowWidth = $('body').innerWidth();
         if (windowWidth > 790) {
             $('.burger, .sidebar').removeClass('open');
             $('.darkbg').removeClass('dark');
-            $('body').removeClass('lock');
+            // $('body').removeClass('lock');
         }
     });
     // /burger 
