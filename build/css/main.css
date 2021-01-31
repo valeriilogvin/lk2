@@ -1549,9 +1549,7 @@ li {
       -o-transition: all 0.5s ease 0s;
       transition: all 0.5s ease 0s; }
     .sidebar__user {
-      border-bottom: 1px solid #000; }
-  body.lock {
-    overflow: hidden; } }
+      border-bottom: 1px solid #000; } }
 
 @media (max-width: 890px) {
   .notifications__inner {
@@ -2015,8 +2013,6 @@ li {
       transition: all 0.5s ease 0s; }
     .sidebar__user {
       border-bottom: 1px solid #000; }
-  body.lock {
-    overflow: hidden; }
   .lk-content__chart {
     max-width: 100%; }
   .lk-banner__item-ban {
