@@ -61,10 +61,7 @@
       width: 100%;
     }
   }
-  .lk-banner__list {
-    flex-wrap: wrap;
-    justify-content: start;
-  }
+ 
   .lk-source__inner {
     padding-left: 0;
 
@@ -189,12 +186,7 @@
 }
 
 @media (max-width: 1196px) {
-  .lk-banner__list {
-    display: block;
-  }
-  .lk-banner__item-ban {
-    margin: 20px auto 0;
-  }
+  
   .lk-banner__item {
     margin-top: 20px;
   }
