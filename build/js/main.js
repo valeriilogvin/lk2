@@ -4,16 +4,19 @@ $(function () {
     $('.burger').click(function () {
         $('.burger, .sidebar').toggleClass('open');
         $('.darkbg').toggleClass('dark');
+        $('body').toggleClass('lock');
     });
     $('.darkbg').click(function () {
         $('.burger, .sidebar').removeClass('open');
         $('.darkbg').removeClass('dark');
+        $('body').removeClass('lock');
     });
     $(window).resize(function () {
         var windowWidth = $('body').innerWidth();
         if (windowWidth > 790) {
             $('.burger, .sidebar').removeClass('open');
             $('.darkbg').removeClass('dark');
+            $('body').removeClass('lock');
         }
     });
     // /burger 
@@ -54,31 +57,35 @@ $(function () {
         $(this).find('.support__top-elips-svg').toggleClass('hover');
     })
 
-    // $('.burger').on('click', function () {
-    //     $(this).find('.burger-span').toggleClass('active');
-    //     $('.sidebar').toggleClass('active-burger');
-    // })
+    $("input[name='add-chat-input[]']").change(function(){
+        var filename = $(this).val().replace(/.*\\/, "");
+        $('#add-file-text').html(`
+            <a onclick="support_screenshot_delete()" style="padding: 10px;">
+                <svg  width="8" height="9" viewBox="0 0 8 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1L7.39013 8.39013" stroke="#8E92A6"/>
+                    <path d="M7.38965 1L-0.000482559 8.39013" stroke="#8E92A6"/>
+                </svg>
+            </a>
 
-
+            ${filename}
+        `);
+    });
 
 });
 
-/* Локализация datepicker */
-$.datepicker.regional['ru'] = {
-    closeText: 'Закрыть',
-    prevText: 'Предыдущий',
-    nextText: 'Следующий',
-    currentText: 'Сегодня',
-    monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-    monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    dayNames: ['воскресенье', 'понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота'],
-    dayNamesShort: ['вск', 'пнд', 'втр', 'срд', 'чтв', 'птн', 'сбт'],
-    dayNamesMin: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-    weekHeader: 'Не',
-    dateFormat: 'd, MM, y',
-    firstDay: 1,
-    isRTL: false,
-    showMonthAfterYear: false,
-    yearSuffix: ''
-};
-$.datepicker.setDefaults($.datepicker.regional['ru']);
+function multiple_input_handler(files){
+    if (files.length === 1){
+        $('#input-multiply-text').html(files[0].name);
+    } else {
+        $('#input-multiply-text').html(`${files.length} файла выбрано`);
+    }
+}
+
+function support_input_file_handler(){
+    $("input[name='add-chat-input[]']").click();
+}
+
+function support_screenshot_delete() {
+    $("input[name='add-chat-input[]']").val('');
+    $('#add-file-text').html('');
+}

@@ -46,20 +46,10 @@
 
 @media (max-width: 1600px) {
 
-// <<<<<<< HEAD
-//     .right {
-//       padding-left: 0;
-//       border: none;
-//       width: 100%;
-//     }
-  
- 
-// =======
-//   .lk-banner__list {
-//     flex-wrap: wrap;
-//     justify-content: start;
-//   }
-// >>>>>>> 157827140f542fbb9b166bca9e79525125276bc8
+  .lk-banner__list {
+    flex-wrap: wrap;
+    justify-content: start;
+  }
   .lk-source__inner {
     padding-left: 0;
 
@@ -272,9 +262,6 @@
 
     z-index: 21;
 
-    &__user {
-      border-bottom: 1px solid #000;
-    }
   }
  
 }
@@ -418,10 +405,6 @@
 
   .add-chat__btns__wrap {
     margin-top: 20px;
-    display: block;
-  }
-  .add-chat__path {
-    margin: 0 auto 20px;
   }
   .add-chat__btns__inner {
     display: block;

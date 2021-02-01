@@ -20,7 +20,7 @@
 .ui-datepicker .ui-datepicker-next{
   width: 35px;
   height: 35px;
-  top: 50%;
+  top: 140px;
   transform: translateY(-50%);
   border-radius: 50%;
   background: #FFFFFF;
@@ -29,11 +29,14 @@
 }
 
 .ui-datepicker .ui-datepicker-next{
+  right: -57px;
+
   span{
     background-image: url("data:image/svg+xml,%3Csvg width='9' height='14' viewBox='0 0 9 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.71436 2.14307L6.72075 7.18371L1.71436 12.2244' stroke='%23616781' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E%0A");
   }
 }
 .ui-datepicker .ui-datepicker-prev{
+  left: -57px;
     span{
       background-image: url("data:image/svg+xml,%3Csvg width='9' height='14' viewBox='0 0 9 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.28564 2.14307L2.27925 7.18371L7.28564 12.2244' stroke='%23616781' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E%0A");
     }
@@ -99,6 +102,19 @@
 
 .ui-datepicker {
   z-index: 999 !important;
+  margin-top: 40px;
+  margin-left: -100px;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute; /* Абсолютное позиционирование */
+    left: 100px;
+    top: 0;
+    transform: translateY(-100%);
+    border: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+  }
   .selected-end {
     &.selected-start {
       a {
@@ -213,6 +229,40 @@
         content: '';
         z-index: -1;
       }
+    }
+  }
+
+  @media (max-width: 1196px) {
+    margin-left: 0;
+  }
+
+  @media (max-width: 660px) {
+    width: 275px !important;
+    &:before {
+      left: 10px;
+    }
+    .ui-datepicker-group{
+      width: calc(100% - 30px);
+      height: 302px;
+    }
+
+    .ui-datepicker-prev {
+      top: 300px;
+    }
+    .ui-datepicker-next {
+      top: 0;
+
+    }
+  }
+
+  @media (max-width: 380px) {
+    padding: 20px 10px 20px!important;
+
+    .ui-datepicker-prev {
+      left: -30px;
+    }
+    .ui-datepicker-next {
+      right: -30px;
     }
   }
 }
