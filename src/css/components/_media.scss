@@ -389,6 +389,9 @@
   .lk-content__info-inner {
     display: block;
   }
+  .lk-content__info-item + .lk-content__info-item{
+    border-top: 1px solid rgba(142, 146, 166, 0.4);
+  }
   .lk-content__info-item:not(:last-child) {
     margin-right: 0;
     padding-right: 0;
@@ -480,6 +483,11 @@
 
 
 @media (max-width: 465px) {
+  .lk-content__form{
+    .buttons{
+      width: 100%;
+    }
+  }
   .lk-content__info-inner {
     padding: 0px 25px 0px 25px;
   }
@@ -546,13 +554,12 @@
   .lk-content__top-pag {
     padding: 23px 40px 20px;
   }
-
-  .lk-content__form .checkboxes{
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 390px) {
+  .lk-content__form .checkboxes{
+    flex-direction: column;
+  }
   .lk-banner__item-info {
     display: block;
   }

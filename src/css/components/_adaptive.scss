@@ -564,16 +564,14 @@
     .tabs__caption .lk-content__text {
       padding: 19px 15px 18px;
     }
-  
-    .burger {
-      top: 20px;
-      right: 20px;
+    .lk-content__top-pag{
+      margin-right: 0;
     }
     .support__top-text {
       padding: 18px 20px 27px;
     }
     .lk-content__top-pag {
-      padding: 23px 40px 20px;
+      padding: 23px 20px 20px;
     }
     // ------------
     .tabs__caption .lk-content__text {
@@ -599,7 +597,6 @@
   
     }
     .lk-content__text {
-      font-size: 10px;
       padding: 32px 9px 27px;
     }
   
